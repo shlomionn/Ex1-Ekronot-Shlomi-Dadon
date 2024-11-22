@@ -24,6 +24,8 @@
   <ItemGroup>
     <ClCompile Include="test1basic.cpp" />
     <ClCompile Include="test2.cpp" />
+    <ClCompile Include="test3Big3.cpp" />
+    <ClCompile Include="test4.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

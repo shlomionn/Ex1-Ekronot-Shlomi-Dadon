@@ -146,3 +146,40 @@ void Vector::resize(const int n, const int& val)
 	_size = n;
 }
 
+Vector::Vector(const Vector& other)
+{
+	*this = other;
+}
+
+Vector& Vector::operator=(const Vector& other)
+{
+	int i = 0;
+	_capacity = other._capacity;
+	_size = other._size;
+	_resizeFactor = other._resizeFactor;
+	if (_elements)
+	{
+		this->~Vector();
+	}
+	this->_elements = new int[other._capacity];
+	for (i = 0; i < _size; i++)
+	{
+		this->_elements[i] = other._elements[i];
+	}
+	return *this;
+}
+
+int& Vector::operator[](int n) const
+{
+	if (n >= 0 && n < _size)
+	{
+		return _elements[n];
+	}
+	std::cout << "error: attempt to access a vector out of bound. first number returned" << std::endl;
+	return _elements[0];
+}
+
+
+
+
+
